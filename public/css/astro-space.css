@@ -1,0 +1,357 @@
+/* Astro Space - NASA Inspired Upload Page */
+
+.astro-page {
+    min-height: auto;
+    padding: 40px 20px;
+    background: #f4f7fb;
+}
+
+.astro-page * {
+    box-sizing: border-box;
+}
+
+.astro-container {
+    width: min(1100px, 92%);
+    margin: 0 auto;
+}
+
+/* Hero */
+
+.astro-hero {
+    display:none;
+}
+
+.astro-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    font-size: 17px;
+    position: relative;
+    z-index: 2;
+}
+
+.astro-brand-icon {
+    width: 38px;
+    height: 38px;
+    display: grid;
+    place-items: center;
+    background: #e23b45;
+    color: white;
+    border-radius: 50%;
+    font-size: 22px;
+}
+
+.astro-hero-content {
+    max-width: 680px;
+    padding-top: 75px;
+    position: relative;
+    z-index: 2;
+}
+
+.astro-eyebrow {
+    display: inline-block;
+    color: #1885d4;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 14px;
+}
+
+.astro-hero .astro-eyebrow {
+    color: #7ec8ff;
+}
+
+.astro-hero h1 {
+    color: white;
+    font-size: clamp(38px, 6vw, 65px);
+    line-height: 1.08;
+    margin: 0 0 22px;
+    font-weight: 800;
+}
+
+.astro-hero h1 span {
+    display: block;
+    color: #55b8f5;
+}
+
+.astro-hero-content p {
+    color: #c3d5e7;
+    font-size: 17px;
+    line-height: 1.8;
+    max-width: 550px;
+}
+
+/* Decorative orbital rings */
+
+.astro-orbit {
+    position: absolute;
+    border: 1px solid rgba(107, 190, 255, 0.18);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.orbit-one {
+    width: 420px;
+    height: 420px;
+    right: -80px;
+    top: 40px;
+}
+
+.orbit-two {
+    width: 300px;
+    height: 300px;
+    right: -20px;
+    top: 100px;
+}
+
+/* Upload section */
+
+.astro-upload-section {
+    padding: 75px 0 90px;
+}
+
+.astro-section-heading {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 35px;
+}
+
+.astro-section-heading h2 {
+    color: #102b49;
+    font-size: 34px;
+    margin: 0 0 12px;
+}
+
+.astro-section-heading p {
+    color: #66788b;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* Upload card */
+
+.astro-upload-card {
+    max-width: 720px;
+    margin: 0 auto;
+    background: white;
+    padding: 38px;
+    border-radius: 12px;
+    border: 1px solid #dce5ef;
+    box-shadow: 0 12px 40px rgba(20, 49, 79, 0.08);
+}
+
+.astro-form-group {
+    margin-bottom: 25px;
+}
+
+.astro-form-group > label {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    color: #193653;
+    margin-bottom: 10px;
+}
+
+.astro-form-group > label span {
+    color: #e23b45;
+}
+
+.astro-form-group input[type="text"],
+.astro-form-group textarea {
+    width: 100%;
+    border: 1px solid #ced9e5;
+    background: #fbfdff;
+    border-radius: 6px;
+    padding: 14px 15px;
+    font-size: 14px;
+    color: #193653;
+    outline: none;
+    font-family: inherit;
+}
+
+.astro-form-group input[type="text"]:focus,
+.astro-form-group textarea:focus {
+    border-color: #1685d2;
+    box-shadow: 0 0 0 3px rgba(22, 133, 210, 0.12);
+}
+
+.astro-form-group textarea {
+    resize: vertical;
+}
+
+/* File upload area */
+
+.astro-dropzone {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 210px;
+    padding: 25px;
+    border: 2px dashed #9bbbd5;
+    border-radius: 9px;
+    background: #f5faff;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.astro-dropzone:hover,
+.astro-dropzone.dragging {
+    border-color: #1685d2;
+    background: #eaf5ff;
+}
+
+.astro-upload-icon {
+    width: 52px;
+    height: 52px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: #dceeff;
+    color: #0876c1;
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.astro-dropzone strong {
+    color: #193653;
+    font-size: 15px;
+    margin-bottom: 8px;
+}
+
+.astro-dropzone span {
+    color: #62788e;
+    font-size: 13px;
+}
+
+.astro-dropzone small {
+    color: #8799aa;
+    font-size: 11px;
+    margin-top: 15px;
+}
+
+.astro-dropzone input[type="file"] {
+    display: none;
+}
+
+.astro-image-preview {
+    max-width: 100%;
+    max-height: 420px;
+    border-radius: 6px;
+    background: #ffffff;
+    object-fit: contain;
+}
+
+.astro-dropzone.has-preview .astro-upload-icon,
+.astro-dropzone.has-preview strong,
+.astro-dropzone.has-preview span,
+.astro-dropzone.has-preview small {
+    display: none;
+}
+
+.astro-file-name {
+    margin-top: 12px;
+    color: #0876c1;
+    font-size: 13px;
+    font-weight: 600;
+    overflow-wrap: anywhere;
+}
+
+/* Button */
+
+.astro-submit-button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 16px 20px;
+    border: none;
+    border-radius: 6px;
+    background: #0879c9;
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.astro-submit-button:hover {
+    background: #075e9c;
+    transform: translateY(-1px);
+}
+
+.astro-submit-button span {
+    font-size: 20px;
+}
+
+.astro-privacy-note {
+    text-align: center;
+    color: #8191a1;
+    font-size: 12px;
+    margin: 18px 0 0;
+}
+
+/* Messages */
+
+.astro-message {
+    max-width: 720px;
+    margin: 0 auto 20px;
+    padding: 15px 18px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.astro-message.success {
+    background: #e9f8ef;
+    color: #176b38;
+    border: 1px solid #b9e5c8;
+}
+
+.astro-message.error {
+    background: #fff0f0;
+    color: #a12626;
+    border: 1px solid #f0c5c5;
+}
+
+/* Hide honeypot */
+
+.astro-honeypot {
+    position: absolute;
+    left: -9999px;
+}
+
+/* Responsive layout */
+
+@media (max-width: 600px) {
+    .astro-hero {
+        padding-bottom: 65px;
+    }
+
+    .astro-hero-content {
+        padding-top: 55px;
+    }
+
+    .astro-upload-section {
+        padding: 50px 0;
+    }
+
+    .astro-upload-card {
+        padding: 22px;
+    }
+
+    .astro-section-heading h2 {
+        font-size: 27px;
+    }
+
+    .orbit-one {
+        right: -300px;
+    }
+
+    .orbit-two {
+        right: -250px;
+    }
+}
